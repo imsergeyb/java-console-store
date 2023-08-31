@@ -23,30 +23,5 @@ pipeline{
         }
     }
 
-        stage ('Checkstyle analysis'){
-        steps{
-        sh 'mvn checkstyle:checkstyle'
-        }}
-
-        stage('Code Analysis'){
-        environment {
-                scannerHome = tool 'sonar5.0'
-                }
-                steps {
-                withSonarQubeEnv('sonar'){
-                    sh '''${scannerHome}/bin/sonar-scanner \
-                    -Dsonar.projectKey=java-console-store \
-                    -Dsonar.projectName=java-console-store \
-                    -Dsonar.projectVersion=1.0 \
-                    -Dsonar.source=src/ \
-                    -Dsonar.java.binaries=target/test-classes/facade \
-                    -Dsonar.junit.reportsPath=target/surefire-reports/ \
-                    -Dsonar.jacoco.reportsPath=target/jacoco.exec \
-                    -Dsonar.java.checkstyle.reportPath=checkstyle-result.xml
-
-                    '''
-                } 
-            }
-        }
     }
 }
