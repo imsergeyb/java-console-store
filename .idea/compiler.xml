@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="java-console-store" />
         <module name="DIT043_Project_Template" />
         <module name="DIT043_SergeyBalan" />
         <module name="DIT043_Project_Group7" />
